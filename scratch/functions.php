@@ -41,6 +41,7 @@ function scratch_setup(){
         'search-form',
         'skip-links',
     ));
+    
+    // add support for (3) footer widgets
+    add_theme_support('genesis-footer-widgets', 3);
 }
-
-?>
