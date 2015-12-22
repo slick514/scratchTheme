@@ -20,6 +20,20 @@ add_action('genesis_setup', 'scratch_setup');
  *  @since 1.0.0
  */
 function scratch_setup(){
+    define('CHILD_THEME_NAME', 'Scratch');
+    define('CHILD_THEME_URL', 'http://github.com/slick514/scratchTheme');
+    define('CHILD_THEME_VERSION', '1.0.0');
     
+    add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption'  ) );
+    add_theme_support( 'genesis-responsive-viewport');
+    add_theme_support( 'genesis-accessibility', array(
+        '404-page',
+        'drop-down-menu',
+        'headings',
+        'rems',
+        'search-form',
+        'skip-links',
+    ));
 }
+
 ?>
