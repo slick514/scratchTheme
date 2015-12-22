@@ -55,7 +55,8 @@ function scratch_setup(){
     genesis_unregister_layout('sidebar-content-sidebar');
     genesis_unregister_layout('sidebar-sidebar-content');
     
-    
+    // Add theme widget areas
+    include_once(get_stylesheet_directory() . '/includes/widget-areas.php');
 }
 
 /*
