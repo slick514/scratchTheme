@@ -16,6 +16,8 @@ add_action('genesis_setup', 'scratch_setup');
  * 
  *  Attach all site-wide functions to the correct hooks & filters.
  *  Functions are defined below this setup function.
+ * 
+ *  @since 1.0.0
  */
 function scratch_setup(){
     
