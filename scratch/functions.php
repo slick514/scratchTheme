@@ -10,7 +10,11 @@
 // load child theme text-domain
 load_child_theme_textdomain('scratch');
 
-add_action('genesis_setup', 'scratch_setup');
+
+// Run this with priority 15 so that it can unregister sidebars that will be 
+// registered when genesis runs
+add_action('genesis_setup', 'scratch_setup', 15);
+
 /*
  *  Theme Setup.
  * 
@@ -21,18 +25,18 @@ add_action('genesis_setup', 'scratch_setup');
  */
 function scratch_setup(){
     
-    // define theme constants
+    // Define theme constants
     define('CHILD_THEME_NAME', 'Scratch');
     define('CHILD_THEME_URL', 'http://github.com/slick514/scratchTheme');
     define('CHILD_THEME_VERSION', '1.0.0');
     
-    // add support for HTML5
+    // Add support for HTML5
     add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption'  ) );
     
-    // add viewport meta tag for mobile browsers
+    // Add viewport meta tag for mobile browsers
     add_theme_support( 'genesis-responsive-viewport');
     
-    // add accessibility support
+    // Add accessibility support
     add_theme_support( 'genesis-accessibility', array(
         '404-page',
         'drop-down-menu',
@@ -42,11 +46,14 @@ function scratch_setup(){
         'skip-links',
     ));
     
-    // add support for (3) footer widgets
+    // Add support for (3) footer widgets
     add_theme_support('genesis-footer-widgets', 3);
     
     // Unregister layouts that use 2ry sidebar
     genesis_unregister_layout('content-sidebar-sidebar');
     genesis_unregister_layout('sidebar-content-sidebar');
     genesis_unregister_layout('sidebar-sidebar-content');
+    
+    // Unregister secondary sidebar
+    unregister_sidebar('sidebar-alt');
 }
