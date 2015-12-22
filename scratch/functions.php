@@ -44,4 +44,9 @@ function scratch_setup(){
     
     // add support for (3) footer widgets
     add_theme_support('genesis-footer-widgets', 3);
+    
+    // Unregister layouts that use 2ry sidebar
+    genesis_unregister_layout('content-sidebar-sidebar');
+    genesis_unregister_layout('sidebar-content-sidebar');
+    genesis_unregister_layout('sidebar-sidebar-content');
 }
