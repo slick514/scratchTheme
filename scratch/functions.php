@@ -13,7 +13,8 @@ load_child_theme_textdomain('scratch');
 
 // Run this with priority 15 so that it can unregister sidebars that will be 
 // registered when genesis runs
-add_action('genesis_setup', 'scratch_setup', 15);
+add_action('genesis_setup', 'scratch_setup');
+add_action('genesis_setup', 'scratch_postsetup', 15);
 
 /*
  *  Theme Setup.
@@ -54,6 +55,18 @@ function scratch_setup(){
     genesis_unregister_layout('sidebar-content-sidebar');
     genesis_unregister_layout('sidebar-sidebar-content');
     
+    
+}
+
+/*
+ *  Post-Setup
+ * 
+ *  Functionality that needs to wait for the genesis setup to finish before
+ *  running
+ * 
+ *  @since 1.0.0
+ */
+function scratch_postsetup(){
     // Unregister secondary sidebar
     unregister_sidebar('sidebar-alt');
 }
