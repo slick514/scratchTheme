@@ -55,8 +55,6 @@ function scratch_setup(){
     genesis_unregister_layout('sidebar-content-sidebar');
     genesis_unregister_layout('sidebar-sidebar-content');
     
-    // Add theme widget areas
-    include_once(get_stylesheet_directory() . '/includes/widget-areas.php');
 }
 
 /*
@@ -68,6 +66,9 @@ function scratch_setup(){
  *  @since 1.0.0
  */
 function scratch_postsetup(){
+    // Add theme widget areas
+    include_once(get_stylesheet_directory() . '/includes/widget-areas.php');
+
     // Unregister secondary sidebar
     unregister_sidebar('sidebar-alt');
 }
