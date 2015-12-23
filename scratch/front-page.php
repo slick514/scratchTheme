@@ -11,6 +11,9 @@
 add_action('genesis_meta', 'scratch_home_page_setup');
 
 function scratch_home_page_setup(){
+    
+    // Define some constants; These should match-up with the ids found 
+    // in "includes/widget-areas.php"
     define('HOME_WELCOME_KEY', 'home-welcome');
     define('CALL_TO_ACTION_KEY', 'call-to-action');
     
