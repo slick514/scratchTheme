@@ -25,7 +25,11 @@ Text Domain:	scratch
 	- Forms
 	- Tables
 	- Screen Reader Text
+        - Skip Links
+    - Structure & Layout
+	- Column Widths and Positions
 */
+
 
 /* # HTML5 Reset
 ---------------------------------------------------------------------------------------------------- */
@@ -445,3 +449,60 @@ th {
     position: relative;
 }
 
+/* ## Skip Links
+---------------------------------------------------------------------------------------------------- */
+.genesis-skip-link {
+	margin: 0;
+}
+
+.genesis-skip-link li {
+	height: 0;
+	width: 0;
+	list-style: none;
+}
+
+/* Display outline on focus */
+:focus {
+	color: #333;
+	outline: #ccc solid 1px;
+}
+
+/* # Structure & Layout
+---------------------------------------------------------------------------------------------------- */
+
+.site-header,
+.site-inner,
+.site-footer{
+    border: 1px solid black;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ## Column Widths and Positions
+--------------------------------------------- */
+
+/* ### Content */
+
+.content {
+	float: right;
+	width: 800px;
+}
+
+.content-sidebar .content {
+	float: left;
+}
+
+.full-width-content .content {
+	width: 100%;
+}
+
+/* ### Primary Sidebar */
+
+.sidebar-primary {
+	float: right;
+	width: 360px;
+}
+
+.sidebar-content .sidebar-primary {
+	float: left;
+}
