@@ -71,3 +71,18 @@ function scratch_postsetup(){
     // Unregister secondary sidebar
     unregister_sidebar('sidebar-alt');
 }
+
+add_action('wp_enqueue_scripts','scratch_enqueue_styles');
+/**
+ *  Font style importing
+ * 
+ *  For bringing in fonts that we need...
+ * 
+ *  @since 1.0.0
+ */
+function scratch_enqueue_styles(){
+    $handle = 'google-fonts';
+    $src = '//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Lobster';
+    
+    wp_enqueue_style($handle, $src);
+}
